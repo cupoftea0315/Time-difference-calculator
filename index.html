@@ -82,4 +82,53 @@
   </center>
 </body>
 
+<head>
+  <title>Day/Night Mode Switcher</title>
+  <script>
+      function toggleMode() {
+          var body = document.getElementsByTagName('body')[0];
+          if (body.classList.contains('night')) {
+              body.classList.remove('night');
+              document.getElementById('mode-switch').innerHTML = 'Night Mode';
+          } else {
+              body.classList.add('night');
+              document.getElementById('mode-switch').innerHTML = 'Day Mode';
+          }
+      }
+  </script>
+  <style>
+      body {
+          background-color: #fff;
+          color: #000;
+      }
+      body.night {
+          background-color: #000;
+          color: #fff;
+      }
+      .mode-switch {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          z-index: 9999;
+      }
+      .mode-switch button {
+          background-color: #fff;
+          color: #000;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+      .mode-switch button:hover {
+          background-color: #000;
+          color: #fff;
+      }
+  </style>
+</head>
+<body>
+  <div class="mode-switch">
+      <button id="mode-switch" onclick="toggleMode()">Night Mode</button>
+  </div>
+</body>
+
 </html>
